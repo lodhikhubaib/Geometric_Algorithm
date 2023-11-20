@@ -30,7 +30,9 @@ Figure 1: Convex hull Diagram
 In Figure 1 you have to select points on Canvas and then select the algorithm from the drop-down menu to calculate appropriate results.
 
 # Line Intersection
- 
+
+ ![lne](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/477d0715-c08a-4365-8473-74aac64df92f)
+
 Figure 2: Line Intersection Diagram
 
 In Figure 2 you have to select points on Canvas and then select the algorithm from the drop-down menu to calculate appropriate results.
