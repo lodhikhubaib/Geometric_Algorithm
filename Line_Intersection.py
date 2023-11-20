@@ -132,7 +132,7 @@ class GUI:
             self.check_intersections_with_placeholder_algorithm()
 
     def placeholder_intersection_algorithm(self,p1, q1, p2, q2):
-        def do_intersect(p1, q1, p2, q2):
+        def do_intersect(self,p1, q1, p2, q2):
             def orientation(p, q, r):
                 val = (q["y"] - p["y"]) * (r["x"] - q["x"]) - (q["x"] - p["x"]) * (r["y"] - q["y"])
                 if val == 0:
