@@ -294,4 +294,5 @@ class GUI:
 
 if __name__ == "__main__":
     line_intersection_gui = GUI()
+    #line_intersection_gui.plot_time_complexity()
     line_intersection_gui.root.mainloop()
