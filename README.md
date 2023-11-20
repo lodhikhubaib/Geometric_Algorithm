@@ -21,11 +21,12 @@ Convex Hull and Line Intersection algorithms, implemented in Python using Tkinte
 This project explores algorithms for computing convex hulls and detecting line in- tersections in computational geometry. Convex hulls, the smallest enclosing convex shapes for a set of points, are computed using Brute Force, Jarvis March, Graham Scan, Quick Elimination, and Monotone Chain methods. Line intersection points are deter- mined through Counter-Clockwise (CCW), Brute Force, Cramer’s, and Sweep Line algorithms. The project aims to implement, visualize, and compare these algorithms, providing insights into their efficiency and applicability in different scenarios.
 
 # Programming Design
-Convex hull
+
+# Convex hull
 
  ![co](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/9fe6317d-8d2c-4117-8901-202ae15a3b3a)
 
-Figure 1: Convex hull Diagram
+# Figure 1: Convex hull Diagram
 
 
 
@@ -35,7 +36,7 @@ In Figure 1 you have to select points on Canvas and then select the algorithm fr
 
  ![lne](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/477d0715-c08a-4365-8473-74aac64df92f)
 
-Figure 2: Line Intersection Diagram
+# Figure 2: Line Intersection Diagram
 
 In Figure 2 you have to select points on Canvas and then select the algorithm from the drop-down menu to calculate appropriate results.
 
@@ -49,7 +50,7 @@ Visual Studio. Time Complexity between different algorithm is compared using mat
 ![convex](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/3a1ecb4e-1b13-4c6a-a9a3-bffe7bb36269)
 
  
-Figure 3: Time Complexity: Convex Hull
+# Figure 3: Time Complexity: Convex Hull
 
 
 
@@ -65,7 +66,7 @@ Quick Elimination : Quick elimination makes a polygon on the frontiers. And so a
 
  ![line](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/886d2ffb-9817-4aee-8d48-0a7821880345)
 
-Figure 4: Time Complexity: Line Intersection
+# Figure 4: Time Complexity: Line Intersection
 
 Brute Force: O(n2) - where n is the number of elements or input size.
 
