@@ -19,7 +19,7 @@ class SecondPage:
         image_height = int(0.9 * screen_height)
 
         # Load the background image and resize it
-        background_image = Image.open(r"C:\Users\HP\OneDrive\Desktop\algo\Line inte\Tkinter\AlgoProject\background.jpg")
+        background_image = Image.open(r"C:\Users\HP\OneDrive\Desktop\Geometric_Algorithms\Geometric_Algorithm\src\images\background.jpg")
         image = background_image.resize((image_width, image_height), Image.LANCZOS)
         photo = ImageTk.PhotoImage(image)
 
