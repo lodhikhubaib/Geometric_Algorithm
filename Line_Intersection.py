@@ -9,7 +9,6 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 class GUI:
     def __init__(self):
         self.lines = []
-
         self.root = tk.Tk()
         self.root.title("Line Intersection Checker")
 
@@ -42,7 +41,7 @@ class GUI:
         # Graph Frame
         self.graph_frame = tk.Frame(self.root)
         self.graph_frame.pack(side=tk.LEFT,pady=100) 
-
+    
     def execute_time(self):
         execution_times = []
     
@@ -92,7 +91,8 @@ class GUI:
         self.bar_graph_canvas.draw()
         self.bar_graph_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH)
 
-
+    
+                
     def add_points_to_line(self):
         self.canvas.bind("<Button-1>", self.handle_point_click)
 
@@ -110,12 +110,13 @@ class GUI:
         self.context.delete("all")
 
         for line in self.lines:
-            for point in line:
-                x, y = point["x"], point["y"]
-                self.context.create_oval(x - 5, y - 5, x + 5, y + 5, fill="black")
-                self.context.create_text(x + 8, y - 8, text=f"({x}, {y})", font=('Arial', 8))
+            if len(line) >= 2:  # Check if there are enough points to draw a line
+                for point in line:
+                    x, y = point["x"], point["y"]
+                    self.context.create_oval(x - 5, y - 5, x + 5, y + 5, fill="black")
+                    self.context.create_text(x + 8, y - 8, text=f"({x}, {y})", font=('Arial', 8))
 
-            self.context.create_line(*[(point["x"], point["y"]) for point in line], fill="black")
+                self.context.create_line(*[(point["x"], point["y"]) for point in line], fill="black")
 
     def check_intersections(self):
         method = self.intersection_method.get()
@@ -291,6 +292,13 @@ class GUI:
         self.lines = []
         self.context.delete("all")
         self.status_label.config(text="Status: Canvas cleared")
+        
+        if hasattr(self, "graph_frame"):
+            self.graph_frame.destroy()
+
+        # Recreate an empty time graph frame
+        self.graph_frame = tk.Frame(self.root)
+        self.graph_frame.pack(side=tk.BOTTOM)
 
 if __name__ == "__main__":
     line_intersection_gui = GUI()
