@@ -9,7 +9,9 @@ Algorithm's Project
 
 # Members
 Member 1 : 21K-4549 Aahil Ashiq Ali (Leader) 
+
 Member 2 : 21K-3328 Khuzaima Ahsan
+
 Member 3 : 21K-4596 Mohammad Khubaib Lodhi
 
 # Abstract
