@@ -42,6 +42,8 @@ Visual Studio. Time Complexity between different algorithm is compared using mat
 
 # Results and Discussion
 
+![convex](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/3a1ecb4e-1b13-4c6a-a9a3-bffe7bb36269)
+
  
 Figure 3: Time Complexity: Convex Hull
 
