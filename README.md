@@ -36,7 +36,9 @@ Figure 2: Line Intersection Diagram
 In Figure 2 you have to select points on Canvas and then select the algorithm from the drop-down menu to calculate appropriate results.
 
 # Experimental Setup
-Software: Convex hull and Line Intersection done through tkintor framework of Python. Visual Studio. Time Complexity between different algorithm is compared using mat- plotlib library of python.
+Software: Convex hull and Line Intersection done through tkintor framework of Python. 
+
+Visual Studio. Time Complexity between different algorithm is compared using mat- plotlib library of python.
 
 # Results and Discussion
 
@@ -55,7 +57,7 @@ Monotone Chain: It also boasts a time complexity of O(nlogn) but it is better fo
 
 Quick Elimination : Quick elimination makes a polygon on the frontiers. And so any point inside it is removed from hull. It decreases time more but since I have used a lot of built in python functions, my time complexity is greater than graham scan.
 
- 
+ ![line](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/886d2ffb-9817-4aee-8d48-0a7821880345)
 
 Figure 4: Time Complexity: Line Intersection
 
