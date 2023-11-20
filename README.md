@@ -76,15 +76,15 @@ For solving systems of linear equations, Cramer’s Rule is one option, but othe
 
 
 # Appendix
-https://www.youtube.com/watch?v=-GhzpvvIXlM&list=PLS1QulWo1RIY6fmY$_
+1) https://www.youtube.com/watch?v=-GhzpvvIXlM&list=PLS1QulWo1RIY6fmY$_
 $iTjEhCMsdtAjgbZM
-⦁	https://algs4.cs.princeton.edu/91primitives/
+2) https://algs4.cs.princeton.edu/91primitives/
 https://eecs.wsu.edu/⦁	˜⦁	cook/aa/lectures/l25/node10.html
 
 # Research Paper For Convex Hull
-https://www.sciencedirect.com/science/article/abs/pii/ ⦁	0020019079900723
-https://blog.csdn.net/weixin$_$30263277/article/details/ ⦁	98866720
+1) https://www.sciencedirect.com/science/article/abs/pii/ ⦁	0020019079900723
+2) https://blog.csdn.net/weixin$_$30263277/article/details/ ⦁	98866720
 
 # Research Paper Line Intersection
-1. https://link.springer.com/content/pdf/10.1007/978-0-387-35490-3$_
+1) https://link.springer.com/content/pdf/10.1007/978-0-387-35490-3$_
 $21.pdf
