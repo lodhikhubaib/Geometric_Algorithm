@@ -4,6 +4,8 @@ import matplotlib.path as mpltPath
 import matplotlib.pyplot as plt
 import timeit
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from tkinter import Tk, Canvas, Button, BOTTOM, StringVar, OptionMenu, Label
+from tkinter import Canvas, messagebox
 
 points = []
 
@@ -363,6 +365,13 @@ def monotone_andrew(points,hull):
             break
     hull.append(hull[0])
     return hull
+
+def on_close():
+        # Prompt the user with a Yes/No messagebox
+        user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
+        if user_response:
+            print("Tkinter application closed.")
+            window.destroy()
         
 #..................
 window = tk.Tk()
@@ -437,4 +446,5 @@ time_complexity.place(x=800,y=300)
 
 #................................................................................................
 clear = tk.Button(window,text="Clear",font=("arial",15,"bold"),command = clear_points).place(x=850,y=720)
+window.protocol("WM_DELETE_WINDOW", on_close)
 window.mainloop()
