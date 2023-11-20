@@ -14,7 +14,7 @@ class GUI:
         self.root.title("Line Intersection Checker")
 
         self.canvas = tk.Canvas(self.root, width=800, height=500, bg="white")
-        self.canvas.pack()
+        self.canvas.pack(side=tk.RIGHT, pady=0)
 
         self.context = self.canvas
 
