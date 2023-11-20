@@ -2,6 +2,8 @@ from PIL import Image, ImageTk
 import tkinter as tk
 import importlib
 from Line_Intersection import GUI as LineIntersectionGUI
+from tkinter import Tk, Canvas, Button, BOTTOM, StringVar, OptionMenu, Label
+from tkinter import Canvas, messagebox
 
 class SecondPage:
     def __init__(self, root, displayed=False):
@@ -20,7 +22,7 @@ class SecondPage:
         image_height = int(1 * screen_height)
 
         # Load the background image and resize it
-        background_image = Image.open(r"C:\Users\HP\OneDrive\Desktop\Geometric_Algorithms\Geometric_Algorithm\src\images\background.jpg")
+        background_image = Image.open(r"C:\Users\HP\OneDrive\Desktop\algo\Line inte\Tkinter\AlgoProject\background.jpg")
         image = background_image.resize((image_width, image_height), Image.LANCZOS)
         photo = ImageTk.PhotoImage(image)
 
@@ -39,6 +41,16 @@ class SecondPage:
         # Button for Line Intersection
         Line_Intersection_button = tk.Button(root, text="Line Intersection", command=self.Line_Intersection, font=("Helvetica", 18, "bold"))
         Line_Intersection_button.place(x=screen_width // 4, y=screen_height // 4 + image_height // 4 + 2 * button_spacing, anchor="w")
+
+        self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+    def on_close(self):
+        # Prompt the user with a Yes/No messagebox
+        user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
+        if user_response:
+            print("Tkinter application closed.")
+            self.root.destroy()
+            
 
     def Convex_Hull(self):
         if not self.displayed:  # Check if the page has been displayed
