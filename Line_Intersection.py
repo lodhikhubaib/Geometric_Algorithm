@@ -18,25 +18,30 @@ class GUI:
 
         self.context = self.canvas
 
-        self.status_label = tk.Label(self.root, text="Status: ")
-        self.status_label.pack()
-
         self.intersection_method = tk.StringVar()
         self.intersection_method.set("bruteForce")
 
-        self.intersection_method_menu = tk.OptionMenu(self.root, self.intersection_method, "bruteForce", "cramer", "ccw", "sweepLine","placeholder")
-        self.intersection_method_menu.pack()
-
-        self.add_points_button = tk.Button(self.root, text="Add Points to Line", command=self.add_points_to_line)
-        self.add_points_button.pack()
+        self.clear_canvas_button = tk.Button(self.root, text="Clear Canvas", command=self.clear_canvas)
+        self.clear_canvas_button.pack(side=tk.BOTTOM)   
+        
+        self.compare_time_button = tk.Button(self.root, text="Compare Time", command=self.execute_time)
+        self.compare_time_button.pack(side=tk.BOTTOM)
 
         self.check_intersections_button = tk.Button(self.root, text="Check Intersections", command=self.check_intersections)
-        self.check_intersections_button.pack()
+        self.check_intersections_button.pack(side=tk.BOTTOM)
 
-        self.clear_canvas_button = tk.Button(self.root, text="Clear Canvas", command=self.clear_canvas)
-        self.clear_canvas_button.pack()
-
-        self.root.mainloop()
+        self.add_points_button = tk.Button(self.root, text="Add Points to Line", command=self.add_points_to_line)
+        self.add_points_button.pack(side=tk.BOTTOM)
+                                
+        self.intersection_method_menu = tk.OptionMenu(self.root, self.intersection_method, "bruteForce", "cramer", "ccw", "sweepLine","placeholder")
+        self.intersection_method_menu.pack(side=tk.BOTTOM)
+        
+        self.status_label = tk.Label(self.root, text="Status: ")
+        self.status_label.pack(side=tk.BOTTOM)
+        
+        # Graph Frame
+        self.graph_frame = tk.Frame(self.root)
+        self.graph_frame.pack(side=tk.LEFT,pady=100) 
 
     def execute_time(self):
         execution_times = []
