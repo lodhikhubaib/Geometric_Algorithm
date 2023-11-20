@@ -76,10 +76,9 @@ For solving systems of linear equations, Cramer’s Rule is one option, but othe
 
 
 # Appendix
-1) https://www.youtube.com/watch?v=-GhzpvvIXlM&list=PLS1QulWo1RIY6fmY$_
-$iTjEhCMsdtAjgbZM
+1) https://www.youtube.com/watch?v=-GhzpvvIXlM&list=PLS1QulWo1RIY6fmY$_$iTjEhCMsdtAjgbZM
 2) https://algs4.cs.princeton.edu/91primitives/
-https://eecs.wsu.edu/⦁	˜⦁	cook/aa/lectures/l25/node10.html
+3) https://eecs.wsu.edu/⦁	˜⦁	cook/aa/lectures/l25/node10.html
 
 # Research Paper For Convex Hull
 1) https://www.sciencedirect.com/science/article/abs/pii/ ⦁	0020019079900723
