@@ -12,7 +12,7 @@ root = tk.Tk()
 root.title("Algorithm Project")
 
 # Load and display an image on the front page
-image = Image.open(r"C:\Users\HP\OneDrive\Desktop\algo\Line inte\Tkinter\Back.jpeg")  # Replace with your image file
+image = Image.open(r"C:\Users\HP\OneDrive\Desktop\Geometric_Algorithms\Geometric_Algorithm\src\images\Back.jpeg")  # Replace with your image file
 image = image.resize((700, 500), Image.LANCZOS)
 photo = ImageTk.PhotoImage(image)
 
