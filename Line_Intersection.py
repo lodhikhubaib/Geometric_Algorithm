@@ -31,6 +31,55 @@ class GUI:
 
         self.root.mainloop()
 
+    def execute_time(self):
+        execution_times = []
+    
+        if len(self.lines) < 2:
+            self.status_label.config(text="Status: More than two vertices are needed to calculate convex hull")
+            return
+
+        default_algorithm = self.intersection_method.get()  # Save the current algorithm
+        self.intersection_method.set
+
+        for i in range(5):
+            if i == 0:
+                method = "bruteForce"
+            elif i == 1:
+                method = "cramer"
+            elif i == 2:
+                method = "ccw"
+            elif i == 3:
+                method = "sweepLine"
+            elif i == 4:
+                method = "placeholder"
+                
+            self.intersection_method.set(method)
+            
+            execution_time = timeit.timeit(self.check_intersections, number=10) 
+            average_time_per_run = execution_time / 10
+            execution_times.append(average_time_per_run)
+    
+        self.bar_graph(execution_times)
+        
+        self.intersection_method.set(default_algorithm)
+    
+    def bar_graph(self, execution_times):
+        algorithm = ['BF', 'CR', 'CCW', 'SL', 'PH']
+        self.fig, self.ax = plt.subplots()
+        self.ax.bar(algorithm, execution_times, color='blue')
+        self.ax.set_xlabel('Algorithms')
+        self.ax.set_ylabel('Average Seconds')
+        self.ax.set_title('Average Execution Times of Algorithms')
+        self.fig.set_size_inches(4.7, 4)
+
+        if hasattr(self, "bar_graph_canvas"):
+        # Destroy the existing canvas if it exists
+            self.bar_graph_canvas.get_tk_widget().destroy()
+
+        self.bar_graph_canvas = FigureCanvasTkAgg(self.fig, master=self.graph_frame)
+        self.bar_graph_canvas.draw()
+        self.bar_graph_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH)
+
 
     def add_points_to_line(self):
         self.canvas.bind("<Button-1>", self.handle_point_click)
