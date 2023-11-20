@@ -7,16 +7,17 @@ class SecondPage:
     def __init__(self, root, displayed=False):
         self.root = root
         self.root.title("Algorithm Project")
-        self.root.geometry(f"{1000}x{1000}")
+        root.configure(background="white")
+        self.root.geometry(f"{1400}x{1400}")
         self.displayed = displayed  # Flag to indicate if the page has been displayed
 
         # Get screen width and height
         screen_width = root.winfo_screenwidth()
         screen_height = root.winfo_screenheight()
 
-        # Calculate the new width and height for the image (80% of the screen width and height)
-        image_width = int(0.9 * screen_width)
-        image_height = int(0.9 * screen_height)
+        # Calculate the new width and height for the image (100% of the screen width and height)
+        image_width = int(1 * screen_width)
+        image_height = int(1 * screen_height)
 
         # Load the background image and resize it
         background_image = Image.open(r"C:\Users\HP\OneDrive\Desktop\Geometric_Algorithms\Geometric_Algorithm\src\images\background.jpg")
@@ -29,7 +30,7 @@ class SecondPage:
         self.image_label.place(x=screen_width // 4 - image_width // 4, y=screen_height // 4 - image_height // 4)  # Center the image on the screen
 
         # Create buttons with appropriate spacing
-        button_spacing = 60  # Adjust the spacing between buttons as needed
+        button_spacing = 80  # Adjust the spacing between buttons as needed
 
         # Button for Convex Hull
         Conex_Hull_button = tk.Button(root, text="Convex Hull", command=self.Convex_Hull, font=("Helvetica", 18, "bold"))
