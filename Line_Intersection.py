@@ -1,4 +1,11 @@
+from matplotlib.figure import Figure
+import numpy as np
 import tkinter as tk
+import math
+import matplotlib.path as mpltPath
+import matplotlib.pyplot as plt
+import timeit
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 class GUI:
     def __init__(self):
         self.lines = []
