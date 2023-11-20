@@ -22,7 +22,9 @@ This project explores algorithms for computing convex hulls and detecting line i
 
 # Programming Design
 Convex hull
- 
+
+ ![co](https://github.com/lodhikhubaib/Geometric_Algorithm/assets/88384068/9fe6317d-8d2c-4117-8901-202ae15a3b3a)
+
 Figure 1: Convex hull Diagram
 
 
