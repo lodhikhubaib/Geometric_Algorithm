@@ -6,6 +6,8 @@ import matplotlib.path as mpltPath
 import matplotlib.pyplot as plt
 import timeit
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from tkinter import Tk, Canvas, Button, BOTTOM, StringVar, OptionMenu, Label
+from tkinter import Canvas, messagebox
 class GUI:
     def __init__(self):
         self.lines = []
@@ -41,7 +43,17 @@ class GUI:
         # Graph Frame
         self.graph_frame = tk.Frame(self.root)
         self.graph_frame.pack(side=tk.LEFT,pady=100) 
-    
+        
+        self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+    def on_close(self):
+        # Prompt the user with a Yes/No messagebox
+        user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
+        if user_response:
+            print("Tkinter application closed.")
+            self.root.destroy()
+            
+            
     def execute_time(self):
         execution_times = []
     
