@@ -48,23 +48,11 @@ class GUI:
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
     def on_close(self):
-    # Prompt the user with a Yes/No messagebox
+        # Prompt the user with a Yes/No messagebox
         user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
         if user_response:
-        # Hide the current window
-            self.root.withdraw()
-
-        # Create a new tkinter window as an example
-            last_page = importlib.import_module("Last_Page")
-            last_page_instance = last_page.SecondPage(tk.Tk())
-        
-        # Wait for the new window to be closed
-            last_page_instance.root.wait_window()
-
-        # Show the current window again
-            self.root.deiconify()
-            #self.root.destroy()
-            #sys.exit()
+            print("Tkinter application closed.")
+            self.root.destroy()
             
             
     def execute_time(self):
