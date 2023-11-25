@@ -55,6 +55,7 @@ def bar_graph(execution_times):
     if hasattr(bar_graph, "canvas"):
         # Destroy the existing canvas if it exists
         bar_graph.canvas.get_tk_widget().destroy()
+        plt.close('all')
     
     bar_graph.canvas = FigureCanvasTkAgg(fig, master=graph_frame)
     #conects matplotlib with tkinter graph_frame
