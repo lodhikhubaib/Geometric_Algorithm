@@ -55,7 +55,7 @@ class GUI:
             self.root.withdraw()
 
         # Create a new tkinter window as an example
-            last_page = importlib.import_module("last_page1")
+            last_page = importlib.import_module("Last_Page")
             last_page_instance = last_page.SecondPage(tk.Tk())
         
         # Wait for the new window to be closed
