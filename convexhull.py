@@ -3,6 +3,7 @@ import math
 import matplotlib.path as mpltPath
 import matplotlib.pyplot as plt
 import timeit
+import importlib
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tkinter import Tk, Canvas, Button, BOTTOM, StringVar, OptionMenu, Label
 from tkinter import Canvas, messagebox
@@ -367,11 +368,24 @@ def monotone_andrew(points,hull):
     return hull
 
 def on_close():
-        # Prompt the user with a Yes/No messagebox
-        user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
-        if user_response:
-            print("Tkinter application closed.")
-            window.destroy()
+    # Prompt the user with a Yes/No messagebox
+    user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
+    if user_response:
+        # Hide the current window
+        window.withdraw()
+
+        # Create a new tkinter window as an example
+        last_page = importlib.import_module("last_page1")
+        last_page_instance = last_page.SecondPage(tk.Tk())
+        
+        # Wait for the new window to be closed
+        last_page_instance.root.wait_window()
+
+        # Show the current window again
+        window.deiconify()
+            #self.root.destroy()
+            #sys.exit()
+        
         
 #..................
 window = tk.Tk()
