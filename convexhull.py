@@ -7,8 +7,182 @@ import importlib
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tkinter import Tk, Canvas, Button, BOTTOM, StringVar, OptionMenu, Label
 from tkinter import Canvas, messagebox
+from tkinterhtml import HtmlFrame
+import webbrowser
 
+photo_images = []
 points = []
+
+def on_close():
+    user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
+    if user_response:
+        print("Tkinter application closed.")
+        window.withdraw()
+        end_program()
+
+def end_program():
+    if hasattr(bar_graph, "canvas"):
+        bar_graph.canvas.get_tk_widget().destroy()
+    # Load the last page HTML content
+    load_last_page()
+
+def load_last_page():
+    last_page_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Algorithm Project</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+                text-align: center;
+            }
+
+            #main-frame {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 12px;
+            }
+
+            #developer-content {
+                margin: 12px;
+                padding: 12px;
+                border: 0px solid #ddd;
+                background-color: white;
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            #canvas-container-wrapper {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+
+            .canvas-container {
+                flex: 0 0 30%; /* Each canvas container takes 30% of the available space */
+                margin: 12px;
+                padding: 12px;
+                border: 1px solid #ddd;
+                background-color: white;
+                text-align: center;
+            }
+
+            canvas {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+            }
+
+            .details {
+                background-color: white;
+                color: black;
+                padding: 6px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main-frame">
+            <!-- Developer-specific content -->
+            <div id="developer-content">
+                <p>Welcome, Developer!</p>
+                <p>Thank you for using our application.</p>
+                <p>Here is the Information Of the Developer!</p>
+            </div>
+
+            <!-- Canvas containers -->
+            <div id="canvas-container-wrapper">
+                <div class="canvas-container">
+                    <canvas id="aahail-canvas" width="300" height="400"></canvas>
+                    <div class="details" id="aahail-details">
+                        <p>Name: Aahil Ashiq Ali</p>
+                        <p>Email: aahilashiqali@gmail.com</p>
+                        <p>LinkedIn: Aahil Ashiq Ali</p>
+                        <p>University: FAST NUCES, Karachi</p>
+                    </div>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="khubaib-canvas" width="300" height="400"></canvas>
+                    <div class="details" id="khubaib-details">
+                        <p>Name: Muhammad Khubaib Khan Lodhi</p>
+                        <p>Email: lodhikhubaib12@gmail.com</p>
+                        <p>LinkedIn: Khubaib Lodhi</p>
+                        <p>University: FAST NUCES, Karachi</p>
+                    </div>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="khuzaima-canvas" width="300" height="400"></canvas>
+                    <div class="details" id="khuzaima-details">
+                        <p>Name: Khuzaima Ahsan</p>
+                        <p>Email: khuzaimaahsan07@gmail.com</p>
+                        <p>LinkedIn: KHUZAIMA AHSAN</p>
+                        <p>University: FAST NUCES, Karachi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function loadAndDisplayImage(imagePath, canvasId) {
+                const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext('2d');
+
+                const image = new Image();
+                image.onload = function () {
+                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+                };
+                image.src = imagePath;
+            }
+
+            // Replace these paths with the actual paths to your images
+            const aahailImagePath = "aahail.png";
+            const khubaibImagePath = "khubaib.png";
+            const khuzaimaImagePath = "Khuzaima.png";
+
+            loadAndDisplayImage(aahailImagePath, "aahail-canvas");
+            loadAndDisplayImage(khubaibImagePath, "khubaib-canvas");
+            loadAndDisplayImage(khuzaimaImagePath, "khuzaima-canvas");
+        </script>
+    </body>
+    </html>
+    """
+
+    with open("last_page.html", "w") as f:
+        f.write(last_page_content)
+
+    # Open the HTML file in the default web browser
+    webbrowser.open("last_page.html")
+
+    # Close the Tkinter window
+    window.destroy()
+
+    
+    #window.update()
+    
+    #window.withdraw()
+
+    # Create a new Tkinter window
+    #last_page_window = tk.Toplevel()
+    #last_page_window.title("Last Page")
+
+    # Create an HTML frame (WebView) in the new window
+    #last_page_html_frame = HtmlFrame(last_page_window)
+    #last_page_html_frame.pack(expand=True, fill="both")
+
+    # Set the HTML content for the last page
+    #last_page_html_frame.set_content(last_page_content)
+
 
 def remove_edges():
     my_canvas.delete('all')
@@ -368,12 +542,12 @@ def monotone_andrew(points,hull):
     hull.append(hull[0])
     return hull
 
-def on_close():
+'''def on_close():
         # Prompt the user with a Yes/No messagebox
         user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
         if user_response:
             print("Tkinter application closed.")
-            window.destroy()
+            window.destroy()'''
         
         
 #..................
