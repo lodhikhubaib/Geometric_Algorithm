@@ -9,6 +9,8 @@ import timeit
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tkinter import Tk, Canvas, Button, BOTTOM, StringVar, OptionMenu, Label
 from tkinter import Canvas, messagebox
+import webbrowser
+
 class GUI:
     def __init__(self):
         self.lines = []
@@ -48,11 +50,166 @@ class GUI:
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
     def on_close(self):
-        # Prompt the user with a Yes/No messagebox
+    # Prompt the user with a Yes/No messagebox
         user_response = messagebox.askyesno("Confirmation", "Do you want to close the application?")
         if user_response:
             print("Tkinter application closed.")
-            self.root.destroy()
+        # Hide the current window (assuming it's the 'window' variable from the previous code)
+            self.root.withdraw()
+        # Open a new application or perform other actions
+            self.End_program()
+
+    def End_program(self):
+        # Hide the current window
+        self.root.withdraw()
+        
+        # Create a new Tkinter window
+        last_page_window = tk.Toplevel()
+        last_page_window.title("Last Page")
+
+        # Load the last page HTML content
+        self.load_last_page(last_page_window)
+
+    def load_last_page(self, root):
+        last_page_content = """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Algorithm Project</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: white;
+                    text-align: center;
+                }
+
+                #main-frame {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 12px;
+                }
+
+                #developer-content {
+                    margin: 12px;
+                    padding: 12px;
+                    border: 0px solid #ddd;
+                    background-color: white;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                #canvas-container-wrapper {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
+                }
+
+                .canvas-container {
+                    flex: 0 0 30%; /* Each canvas container takes 30% of the available space */
+                    margin: 12px;
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    background-color: white;
+                    text-align: center;
+                }
+
+                canvas {
+                    max-width: 100%;
+                    height: auto;
+                    border: 1px solid #ddd;
+                }
+
+                .details {
+                    background-color: white;
+                    color: black;
+                    padding: 6px;
+                    text-align: left;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="main-frame">
+                <!-- Developer-specific content -->
+                <div id="developer-content">
+                    <p>Welcome, Developer!</p>
+                    <p>Thank you for using our application.</p>
+                    <p>Here is the Information Of the Developer!</p>
+                </div>
+
+                <!-- Canvas containers -->
+                <div id="canvas-container-wrapper">
+                    <div class="canvas-container">
+                        <canvas id="aahail-canvas" width="300" height="400"></canvas>
+                        <div class="details" id="aahail-details">
+                            <p>Name: Aahil Ashiq Ali</p>
+                            <p>Email: aahilashiqali@gmail.com</p>
+                            <p>LinkedIn: Aahil Ashiq Ali</p>
+                            <p>University: FAST NUCES, Karachi</p>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="khubaib-canvas" width="300" height="400"></canvas>
+                        <div class="details" id="khubaib-details">
+                            <p>Name: Muhammad Khubaib Khan Lodhi</p>
+                            <p>Email: lodhikhubaib12@gmail.com</p>
+                            <p>LinkedIn: Khubaib Lodhi</p>
+                            <p>University: FAST NUCES, Karachi</p>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="khuzaima-canvas" width="300" height="400"></canvas>
+                        <div class="details" id="khuzaima-details">
+                            <p>Name: Khuzaima Ahsan</p>
+                            <p>Email: khuzaimaahsan07@gmail.com</p>
+                            <p>LinkedIn: KHUZAIMA AHSAN</p>
+                            <p>University: FAST NUCES, Karachi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function loadAndDisplayImage(imagePath, canvasId) {
+                    const canvas = document.getElementById(canvasId);
+                    const ctx = canvas.getContext('2d');
+
+                    const image = new Image();
+                    image.onload = function () {
+                        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+                    };
+                    image.src = imagePath;
+                }
+
+                // Replace these paths with the actual paths to your images
+                const aahailImagePath = "aahail.png";
+                const khubaibImagePath = "khubaib.png";
+                const khuzaimaImagePath = "Khuzaima.png";
+
+                loadAndDisplayImage(aahailImagePath, "aahail-canvas");
+                loadAndDisplayImage(khubaibImagePath, "khubaib-canvas");
+                loadAndDisplayImage(khuzaimaImagePath, "khuzaima-canvas");
+            </script>
+        </body>
+        </html>
+        """
+        # Save the HTML content to a temporary file
+        with open("Last_Page.html", "w") as f:
+            f.write(last_page_content)
+
+        # Open the HTML file in the default web browser
+        webbrowser.open("Last_Page.html")
+
+        # Destroy the Tkinter window
+        self.root.destroy()
             
             
     def execute_time(self):
